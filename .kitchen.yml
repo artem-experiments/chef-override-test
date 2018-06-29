@@ -1,0 +1,26 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  log_level: 'warn'
+  product_name: 'chef'
+  product_version: '14.1.1'
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-16.04
+    driver_config:
+      box: bento/ubuntu-16.04
+      gui: false
+  - name: centos-7
+    driver_config:
+      box: bento/centos-7.5
+
+suites:
+  - name: default
+    run_list:
+    - recipe[test1]
