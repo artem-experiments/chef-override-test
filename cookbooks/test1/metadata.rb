@@ -6,3 +6,4 @@ supports 'redhat'
 supports 'ubuntu'
 
 depends 'test2'
+depends 'os-hardening', '= 3.0.0'
